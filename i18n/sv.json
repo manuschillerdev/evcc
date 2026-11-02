@@ -47,15 +47,15 @@
     "combined": "Sammanlagt",
     "config": {
       "buffer": "Hembatteriets energi över {soc} får användas för att stödja laddning och fördröjer avstängning i smartmode. Starta solcellsladdning automatiskt {start}. Notera: \"Ladda alltid\" påverkas inte av denna inställning.",
-      "bufferNone": "Hemmabatteriets energi används inte för billaddning. Ställ in ett värde under {soc} för att aktivera stöd. Notera: \"Ladda alltid\" påverkas inte av denna inställning.",
+      "bufferNone": "Hembatteriets energi används inte för billaddning. Ställ in ett värde under {soc} för att aktivera stöd. Notera: \"Ladda alltid\" påverkas inte av denna inställning.",
       "bufferStart": {
         "above": "när batteriet är över {soc}",
         "full": "när batteriet är fullt",
         "never": "enbart vid tillräckligt överskott"
       },
       "bufferTitle": "Batteriet som laddningsbuffert",
-      "discharge": "Förhindra att hemmabatteriet laddas ur i snabbläge och under planerad laddning.",
-      "gridDischarge": "Tillåt hemmabatteriet att återmata till nätet.",
+      "discharge": "Förhindra att hembatteriet laddas ur i snabbläge och under planerad laddning.",
+      "gridDischarge": "Tillåt hembatteriet att återmata till nätet.",
       "gridDischargeConfirm": {
         "country": "Inställt land: {country}.",
         "description": "Om batterienergi får matas ut till elnätet beror på ditt land och ditt inmatningsavtal. Om batteriet även laddas från elnätet är den exporterade energin inte längre ren solenergi. Med många inmatningstariffer förlorar du då ersättningen eller så är det förbjudet. Kontrollera först ditt inmatningsavtal och nätägarens krav.",
@@ -63,8 +63,8 @@
         "title": "Export till elnätet från batteri"
       },
       "optimizerControlledHint": "Avaktiverad för {loadpoints}. Istället bestämmer {optimizer}.",
-      "priority": "Hemmabatteriet har prioritet så länge det är under {soc}. Därefter får billaddarna överskottet.",
-      "priorityNone": "Solelens överskott går direkt till billaddarna. Ställ in ett värde över {soc} för att prioritera hemmabatteriet.",
+      "priority": "Hembatteriet har prioritet så länge det är under {soc}. Därefter får billaddarna överskottet.",
+      "priorityNone": "Solelens överskott går direkt till billaddarna. Ställ in ett värde över {soc} för att prioritera hembatteriet.",
       "priorityTitle": "Vart ska överskottet gå i första hand?"
     },
     "optimizer": {
@@ -85,7 +85,7 @@
   "batterySettings": {
     "gridChargeTab": "Laddning från nätet",
     "gridDischargeTab": "Laddning från nätet",
-    "modalTitle": "Hemmabatteri",
+    "modalTitle": "Hembatteri",
     "noBattery": "Inga batterier konfigurerade.",
     "usageTab": "Batterianvändning"
   },
@@ -146,11 +146,13 @@
       "template": "Tillverkare",
       "titleAdd": {
         "charging": "Lägg till laddare",
-        "heating": "Lägg till värmekälla"
+        "heating": "Lägg till värmekälla",
+        "switch": "Lägg till fjärrströmbrytare"
       },
       "titleEdit": {
         "charging": "Ändra laddare",
-        "heating": "Ändra värmekälla"
+        "heating": "Ändra värmekälla",
+        "switch": "Ändra fjärrströmbrytare"
       },
       "type": {
         "custom": {
@@ -232,6 +234,15 @@
       "titleAdd": "Lägg till effektbegränsning",
       "titleEdit": "Ändra effektbegränsning"
     },
+    "deviceRef": {
+      "add": {
+        "charger": "Lägg till laddare",
+        "meter": "Lägg till mätare",
+        "switch": "Lägg till fjärrströmbrytare",
+        "tariff": "Lägg till tariff"
+      },
+      "noNesting": "Nästling är begränsad till en nivå. Välj ett annat alternativ."
+    },
     "deviceValue": {
       "activeClients": "Aktiva klienter",
       "amount": "Belopp",
@@ -310,8 +321,16 @@
           "returnEnergy": "Urladdat"
         },
         "consumer": {
+          "chargeStatusB": "viloläge",
+          "chargeStatusC": "uppvärmning",
           "energy": "Konsumerat",
           "returnEnergy": "Producerat"
+        },
+        "continuous": {
+          "chargeStatusB": "normal",
+          "chargeStatusC": "boost",
+          "dimmed": "Dimmad",
+          "enabled": "Boostad"
         },
         "grid": {
           "energy": "Importerat",
@@ -331,7 +350,7 @@
     },
     "devices": {
       "auxMeter": "Smart förbrukare",
-      "batteryStorage": "Hemmabatteri",
+      "batteryStorage": "Hembatteri",
       "consumer": "Brukare",
       "solarSystem": "Solanläggning"
     },
@@ -497,7 +516,7 @@
         "charging": "Lägg till laddare",
         "heating": "Lägg till värmekälla"
       },
-      "addMeter": "Lägg till dedikerad energimätare",
+      "addMeter": "Lägg mätare",
       "advancedConfig": "Avancerade inställningar",
       "cancel": "Avbryt",
       "chargerError": {
@@ -557,7 +576,7 @@
       "electricalSubtitle": "Om du är osäker, kontakta elektriker.",
       "electricalTitle": "Elektricitet",
       "energyMeterHelp": "Extern mätare (Om laddaren inte har en integrerad mätare).",
-      "energyMeterLabel": "Energimätare",
+      "energyMeterLabel": "Dedikerad mätare",
       "estimateLabel": "Interpolera laddningsnivå mellan API uppdateringar",
       "maxCurrentHelp": "Måste vara högre än minimi strömstyrka.",
       "maxCurrentLabel": "Maximal strömstyrka",
@@ -621,7 +640,7 @@
       },
       "titleExample": {
         "charging": "Garage, Carport, etc.",
-        "heating": "Värmepump, värmekälla etc."
+        "heating": "Värmepump, värmare etc."
       },
       "titleLabel": "Titel",
       "vehicleAutoDetection": "automatisk detektering",
@@ -667,7 +686,7 @@
           "titleDefault": "Fordonet sover"
         },
         "connect": {
-          "messageDefault": "Fordon ansluten {pvPower}kW",
+          "messageDefault": "Fordon ansluten med {pvPower}kW",
           "title": "När ett fordon ansluts",
           "titleDefault": "Fordon anslutet"
         },
@@ -738,8 +757,8 @@
         "grid": "Lägg till nätmätare",
         "pv": "Lägg till solenergimätare"
       },
-      "reuseApply": "Använd dess inställningar.",
-      "reuseHint": "{device} kan också användas som \"{target}\".",
+      "reuseApply": "Använd inställningarna.",
+      "reuseHint": "{device} kan även användas som \"{target}\".",
       "save": "Spara",
       "specific": "Specifik integration",
       "template": "Tillverkare",
@@ -881,7 +900,7 @@
       "automaticLevel": {
         "battery": {
           "description": "Styr endast hembatteriet.",
-          "label": "Hembatteri",
+          "label": "hembatteri",
           "status": "{automatic} styr hembatteriet."
         },
         "full": {
@@ -1146,6 +1165,7 @@
       "template": "Leverantör",
       "title": "Tariffer & prognoser",
       "titleChoice": "Vad vill du lägga till?",
+      "titleSub": "Undertariff",
       "type": {
         "co2": "CO₂ -prognos",
         "feedIn": "Exportpris",
@@ -1606,7 +1626,8 @@
         "continuousCo2Description": "Väljer de renaste sammanhängande perioderna.",
         "continuousPriceDescription": "Väljer de billigaste sammanhängande perioderna.",
         "disabledDescription": "Kräver rörligt pris eller CO₂ -prognos.",
-        "label": "Optimering"
+        "label": "Optimering",
+        "optimizerDescription": "{optimizer} väljer tider med lägst pris. Kan orsaka fler start och stopp."
       },
       "planNumber": "Plan {number}",
       "precondition": {

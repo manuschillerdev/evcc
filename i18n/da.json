@@ -146,11 +146,13 @@
       "template": "Fabrikant",
       "titleAdd": {
         "charging": "Tilføj oplader",
-        "heating": "Tilføj varmelegeme"
+        "heating": "Tilføj varmelegeme",
+        "switch": "Tilføj styrbar stikkontakt"
       },
       "titleEdit": {
         "charging": "Ændre oplader",
-        "heating": "Rediger varmelegemet"
+        "heating": "Rediger varmelegemet",
+        "switch": "Rediger styrbar stikkontakt"
       },
       "type": {
         "custom": {
@@ -232,6 +234,15 @@
       "titleAdd": "Tilføj enhed til effektbegrænsning",
       "titleEdit": "Rediger enhed til effektbegrænsning"
     },
+    "deviceRef": {
+      "add": {
+        "charger": "Tilføj oplader",
+        "meter": "Tilføj måler",
+        "switch": "Tilføj styrbar stikkontakt",
+        "tariff": "Tilføj tarif"
+      },
+      "noNesting": "Indlejring er begrænset til et niveau. Vælg venligst en anden mulighed."
+    },
     "deviceValue": {
       "activeClients": "Aktive klienter",
       "amount": "Mængde",
@@ -310,8 +321,16 @@
           "returnEnergy": "Afladet"
         },
         "consumer": {
+          "chargeStatusB": "standby",
+          "chargeStatusC": "varme",
           "energy": "Forbrugt",
           "returnEnergy": "Produceret"
+        },
+        "continuous": {
+          "chargeStatusB": "normal",
+          "chargeStatusC": "boost",
+          "dimmed": "Dæmpet",
+          "enabled": "Boostet"
         },
         "grid": {
           "energy": "Importeret",
@@ -1146,6 +1165,7 @@
       "template": "Udbyder",
       "title": "Tariffer og prognoser",
       "titleChoice": "Hvad ønsker du at tilføje?",
+      "titleSub": "Undertarif",
       "type": {
         "co2": "CO₂ Intensitet",
         "feedIn": "Indfødningspris",
@@ -1606,7 +1626,8 @@
         "continuousCo2Description": "Vælger det reneste sammenhængende tidsrum.",
         "continuousPriceDescription": "Vælger det billigste sammenhængende tidsrum.",
         "disabledDescription": "Kræver dynamisk tarif eller CO₂ prognose.",
-        "label": "Optimering"
+        "label": "Optimering",
+        "optimizerDescription": "{optimizer} vælger de billigste tidsrum. Det kan resultere i multiple start og stop."
       },
       "planNumber": "Plan {number}",
       "precondition": {
