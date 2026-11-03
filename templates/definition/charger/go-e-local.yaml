@@ -1,0 +1,24 @@
+template: go-e-local
+products:
+  - brand: go-e
+    description:
+      generic: Charger Gemini flex 2.0 (local API v2)
+  - brand: go-e
+    description:
+      generic: Charger Gemini 2.0 (local API v2)
+capabilities: ["1p3p"]
+requirements:
+  description:
+    en: |
+      Enable HTTP API v2 in the go-e app and connect the charger to the local network.
+      Enable "simulate unplugging" in the car settings for phase switching.
+      Charging is controlled by evcc. Disable competing charging automations.
+    de: |
+      HTTP API v2 in der go-e App aktivieren und die Wallbox mit dem lokalen Netzwerk verbinden.
+      Für die Phasenumschaltung "Ausstecken simulieren" in den Fahrzeugeinstellungen aktivieren.
+      evcc steuert das Laden. Konkurrierende Ladeautomatisierungen deaktivieren.
+params:
+  - name: host
+render: |
+  type: go-e-local
+  uri: http://{{ .host }}
